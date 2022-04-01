@@ -1,5 +1,79 @@
-@import "./vendor/fonts/fonts";
+//imports
 @import "./vendor/normalize";
+@import "./vendor/fonts/fonts";
 
-@import "./modules/blocks/page/page"
+//mixins
+@mixin reset {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin flex {
+	display: flex;
+}
+
+@mixin grid {
+	display: grid;
+	gap: 20px;
+}
+
+@mixin section {
+	padding: 60px 0;
+	margin: 0 160px;
+}
+
+@mixin half-section {
+	width: 50%;
+}
+
+@mixin section_tablet {
+	margin: 0 60px;
+	padding: 60px 0;
+}
+
+@mixin section_mobile {
+	margin: 0 20px;
+	padding: 20px 0;
+}
+
+@mixin text {
+	font-size: 32px;
+	line-height: 40px;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin text_mobile {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+//variables
+$darkblue: #191D2C;
+$base-color: #E1FD2C;
+$font-l: 'Source Sans Pro';
+$border: solid 1px #e1fd2c;
+
+//styles
+.page {
+	background-color: $darkblue;
+	color: $base-color;
+	font-family: $font-l, sans-serif;
+	min-width: 320px;
+	max-width: 1440px;
+	margin: auto;
+}
+
+.header {
+
+}
+
+.section {
+	@include flex;
+}
+
+.half-section {
+	@include half-section;
+	border: $border;
+}
 
